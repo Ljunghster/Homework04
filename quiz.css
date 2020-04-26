@@ -1,0 +1,26 @@
+#topPage {
+    color: green;
+    background-color: rgb(39, 38, 38);
+    margin: 0 auto;
+    width: 50%;
+    padding: 100px;
+}
+#err {
+    background-color: black;
+    padding: 75px;
+
+}
+
+#Ult {
+    color: white;
+}
+
+#Sec {
+    color: white; 
+}
+
+#unicorn {
+    padding-bottom: 75px;
+    width: 50%;
+    margin: 0 auto
+}
