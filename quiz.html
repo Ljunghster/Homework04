@@ -7,18 +7,68 @@
     <link rel="stylesheet" type="text/css" href="quiz.css">
 </head>
 <body id="err">
+    
     <div id="topPage">
-        <h1>Quizzzzzzz
-            <p id="Ult">The ultimate coders quiz.</p>
-            <p id="Sec">You have 75 seconds to answer 5 questions.</p>
-        </h1>
+        <div id="startPage">
+            <h1>Quizzzzzzz
+                <p id="ult">The ultimate coders quiz.</p>
+                <p id="sec">You have 75 seconds to answer 5 questions.</p>
+            </h1>
+
+        
+            <button id="start" class="button">Start!</button>
+        </div>
+
+        <div id="quizQ1" class="startsInvisible">
+            <p>What is Mario's favorite coding language?</p>
+            <button class="button wrong">TODO</button>
+            <button class="button" id="answer1">C</button>
+            <button class="button wrong">TODO</button>
+            <button class="button wrong">TODO</button>
+        </div>  
+    
+        <div id="quizQ2" class="startsInvisible">
+            <p>What is the attribute to change the color of the back drop for a div?</p>
+            <button class="button wrong">TODO</button>
+            <button class="button wrong">TODO</button>
+            <button class="button" id="answer2">background-color</button>
+            <button class="button wrong">TODO</button>
+        </div>
+    
+        <div id="quizQ3" class="startsInvisible">
+            <p>Where do our repositories live?</p>
+            <button class="button wrong">TODO</button>
+            <button class="button" id="answer3">Github</button>
+            <button class="button wrong">TODO</button>
+            <button class="button wrong">TODO</button>
+        </div>
+    
+        <div id="quizQ4" class="startsInvisible">
+            <p>Tabs or Spaces?</p>
+            <button class="button wrong">TODO</button>
+            <button class="button wrong">TODO</button>
+            <button class="button wrong">TODO</button>
+            <button class="button" id="answer4">Depends on the overall preference of your community.</button>
+        </div>
+    
+        <div id="quizQ5" class="startsInvisible">
+            <p>Name the company that invented React.js.</p>
+            <button class="button" id="answer5">Facebook</button>
+            <button class="button wrong">TODO</button>
+            <button class="button wrong">TODO</button>
+            <button class="button wrong">TODO</button>
+        </div>
+
+        <div id="unicornEgg" class="startsInvisible">
+            <img src="https://www.picgifs.com/glitter-gifs/u/unicorn/picgifs-unicorn-5298755.gif" alt="unicorn bro">
+        </div>
     </div>
 
     <div id="unicorn">
         <img src="https://www.picgifs.com/glitter-gifs/u/unicorn/picgifs-unicorn-5298755.gif" alt="unicorn bro">
     </div>
 
-    <div id="quiz"></div>
+
 
 
 <script src="quiz.js"></script>
