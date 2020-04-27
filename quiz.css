@@ -1,9 +1,10 @@
-#topPage {
+#greyBox {
     color: green;
     background-color: rgb(39, 38, 38);
     margin: 0 auto;
     width: 50%;
-    padding: 100px;
+	padding: 100px;
+	position: relative;
 }
 #err {
     background-color: black;
@@ -54,3 +55,8 @@
     display: none;
 }
 
+#timer {
+	position: absolute;
+    top: 5px;
+    right: 5px;
+}

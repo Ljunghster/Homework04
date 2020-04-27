@@ -1,4 +1,14 @@
+var timeRemainingSec = 75;
+
 document.getElementById('start').onclick = function () {
+
+    document.getElementById('timerSec').innerHTML = timeRemainingSec;
+    function count() {
+        timeRemainingSec = timeRemainingSec-1;
+        document.getElementById('timerSec').innerHTML = timeRemainingSec;
+    }
+    var interval = setInterval(count, 1000);
+
     document.getElementById('startPage').style.display = 'none'
     document.getElementById('quizQ1').style.display = 'block'
 };
@@ -30,9 +40,11 @@ document.getElementById('answer5').onclick = function () {
 
 var wrongAnswers = document.getElementsByClassName('wrong');
 var i;
+
 for (i = 0; i < wrongAnswers.length; i++) {
     answer = wrongAnswers[i]
     answer.onclick = function () {
-        // timer = timer - 5;
+        timeRemainingSec = timeRemainingSec - 5;
+        document.getElementById('timerSec').innerHTML = timeRemainingSec;
     }
 }
