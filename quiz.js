@@ -46,6 +46,38 @@ document.getElementById('answer5').onclick = function () {
     updateScore()
 };
 
+document.getElementsByClassName('wrong').onclick = function () {
+    document.getElementById('quizQ1').style.display = 'none'
+    document.getElementById('quizQ2').style.display = 'block'
+    updateScore0()
+}
+
+document.getElementsByClassName('wrong').onclick = function () {
+    document.getElementById('quizQ2').style.display = 'none'
+    document.getElementById('quizQ3').style.display = 'block'
+    updateScore0()
+}
+
+document.getElementsByClassName('wrong').onclick = function () {
+    document.getElementById('quizQ3').style.display = 'none'
+    document.getElementById('quizQ4').style.display = 'block'
+    updateScore0()
+}
+
+document.getElementsByClassName('wrong').onclick = function () {
+    document.getElementById('quizQ4').style.display = 'none'
+    document.getElementById('quizQ5').style.display = 'block'
+    updateScore0()
+}
+
+document.getElementsByClassName('wrong').onclick = function () {
+    document.getElementById('quizQ5').style.display = 'none'
+    document.getElementById('startPage').style.display = 'block'
+    updateScore0()
+}
+
+
+
 var wrongAnswers = document.getElementsByClassName('wrong');
 var i;
 for (i = 0; i < wrongAnswers.length; i++) {
@@ -55,7 +87,10 @@ for (i = 0; i < wrongAnswers.length; i++) {
         document.getElementById('timerSec').innerHTML = timeRemainingSec;
     }
 }
-
+var updateScore0 = function () {
+    score = score + 0;
+    document.getElementById('scoreBox').innerHTML = score;
+}
 var updateScore = function ()    {
     score = score + 76.5;
     document.getElementById('scoreBox').innerHTML = score;
