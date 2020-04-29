@@ -42,55 +42,38 @@ document.getElementById('answer4').onclick = function () {
 
 document.getElementById('answer5').onclick = function () {
     document.getElementById('quizQ5').style.display = 'none'
-    document.getElementById('unicornEgg').style.display = 'block'
     updateScore()
+    if (score = 382.5) {
+        document.getElementById('unicornEgg').style.display = 'block' 
+    } else {
+        document.getElementById('startPage').style.display = 'block'
+    }
 };
 
-document.getElementsByClassName('wrong').onclick = function () {
-    document.getElementById('quizQ1').style.display = 'none'
-    document.getElementById('quizQ2').style.display = 'block'
-    updateScore0()
-}
+handleWrongAnswer('wrong1', 'quizQ1', 'quizQ2');
+handleWrongAnswer('wrong2', 'quizQ2', 'quizQ3');
+handleWrongAnswer('wrong3', 'quizQ3', 'quizQ4');
+handleWrongAnswer('wrong4', 'quizQ4', 'quizQ5');
+handleWrongAnswer('wrong5', 'quizQ5', 'startPage');
 
-document.getElementsByClassName('wrong').onclick = function () {
-    document.getElementById('quizQ2').style.display = 'none'
-    document.getElementById('quizQ3').style.display = 'block'
-    updateScore0()
-}
-
-document.getElementsByClassName('wrong').onclick = function () {
-    document.getElementById('quizQ3').style.display = 'none'
-    document.getElementById('quizQ4').style.display = 'block'
-    updateScore0()
-}
-
-document.getElementsByClassName('wrong').onclick = function () {
-    document.getElementById('quizQ4').style.display = 'none'
-    document.getElementById('quizQ5').style.display = 'block'
-    updateScore0()
-}
-
-document.getElementsByClassName('wrong').onclick = function () {
-    document.getElementById('quizQ5').style.display = 'none'
-    document.getElementById('startPage').style.display = 'block'
-    updateScore0()
-}
+var handleWrongAnswer = function (className, hideElementID, revealElementID) {
 
 
-
-var wrongAnswers = document.getElementsByClassName('wrong');
-var i;
-for (i = 0; i < wrongAnswers.length; i++) {
-    var answer = wrongAnswers[i]
-    answer.onclick = function () {
-        timeRemainingSec = timeRemainingSec - 5;
-        document.getElementById('timerSec').innerHTML = timeRemainingSec;
+    var wrongAnswers = document.getElementsByClassName(className);
+    var i;
+    for (i = 0; i < wrongAnswers.length; i++) {
+        var answer = wrongAnswers[i]
+        answer.onclick = function () {
+            timeRemainingSec = timeRemainingSec - 5;
+            document.getElementById('timerSec').innerHTML = timeRemainingSec;
+            
+            document.getElementById(hideElementID).style.display = 'none'
+            document.getElementById(revealElementID).style.display = 'block'
+        }
     }
 }
-var updateScore0 = function () {
-    score = score + 0;
-    document.getElementById('scoreBox').innerHTML = score;
-}
+
+
 var updateScore = function ()    {
     score = score + 76.5;
     document.getElementById('scoreBox').innerHTML = score;
