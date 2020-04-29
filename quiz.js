@@ -3,6 +3,7 @@ var timeRemainingSec = 75;
 var score = 0;
 document.getElementById('score').innerHTML = score
 
+var interval;
 document.getElementById('start').onclick = function () {
 
     document.getElementById('timerSec').innerHTML = timeRemainingSec;
@@ -10,7 +11,8 @@ document.getElementById('start').onclick = function () {
         timeRemainingSec = timeRemainingSec-1;
         document.getElementById('timerSec').innerHTML = timeRemainingSec;
     }
-    var interval = setInterval(count, 1000);
+    interval = setInterval(count, 1000);
+    
 
     document.getElementById('startPage').style.display = 'none'
     document.getElementById('quizQ1').style.display = 'block'
@@ -43,10 +45,11 @@ document.getElementById('answer4').onclick = function () {
 document.getElementById('answer5').onclick = function () {
     document.getElementById('quizQ5').style.display = 'none'
     updateScore()
-    if (score = 382.5) {
+    if (score == 382.5) {
         document.getElementById('unicornEgg').style.display = 'block' 
     } else {
         document.getElementById('startPage').style.display = 'block'
+        restartTest()
     }
 };
 
@@ -56,7 +59,7 @@ handleWrongAnswer('wrong3', 'quizQ3', 'quizQ4');
 handleWrongAnswer('wrong4', 'quizQ4', 'quizQ5');
 handleWrongAnswer('wrong5', 'quizQ5', 'startPage');
 
-var handleWrongAnswer = function (className, hideElementID, revealElementID) {
+function handleWrongAnswer(className, hideElementID, revealElementID) {
 
 
     var wrongAnswers = document.getElementsByClassName(className);
@@ -66,19 +69,32 @@ var handleWrongAnswer = function (className, hideElementID, revealElementID) {
         answer.onclick = function () {
             timeRemainingSec = timeRemainingSec - 5;
             document.getElementById('timerSec').innerHTML = timeRemainingSec;
-            
+
             document.getElementById(hideElementID).style.display = 'none'
             document.getElementById(revealElementID).style.display = 'block'
+            if (revealElementID == 'startPage') {
+                restartTest()
+            }
         }
     }
 }
 
 
-var updateScore = function ()    {
+function updateScore()    {
     score = score + 76.5;
-    document.getElementById('scoreBox').innerHTML = score;
+    document.getElementById('score').innerHTML = score;
 }
 
+function restartTest()  {
+    score = 0;
+    document.getElementById('score').innerHTML = score;
+    stopClock();
+    timeRemainingSec = 75;
+}
+
+function stopClock() {
+    clearInterval(interval);
+}
 // var correctAnswers = document.getElementsByClassName('correct');
 // for (i = 0; i < correctAnswers.length; i++) {
 //     answer = correctAnswers[i]
